@@ -3,9 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>VHomeAutomation - Professional Consultancy</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">VHomeAutomation</div>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to VHomeAutomation</h1>
+            <p>Your partner in creating smart living spaces.</p>
+            <button onclick="openPopup()">Book a Free Consultation</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service">
+                <h3>Smart Home Installation</h3>
+                <p>Transform your home with cutting-edge automation solutions.</p>
+            </div>
+            <div class="service">
+                <h3>Energy Efficiency</h3>
+                <p>Save energy with optimized home systems.</p>
+            </div>
+            <div class="service">
+                <h3>24/7 Support</h3>
+                <p>Always here to assist with your automation needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At VHomeAutomation, we specialize in bringing your dream smart home to life with seamless and innovative solutions.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email us at <strong>vigneshwaranj1705@gmail.com</strong> for more information.</p>
+    </section>
+
+    <!-- Popup Form -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Book a Free Consultation</h2>
+            <form id="consultation-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="text" name="location" placeholder="Your Location" required>
+                <input type="date" name="visit_date" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 VHomeAutomation. All Rights Reserved.</p>
+    </footer>
 </body>
-</html>
+</html
