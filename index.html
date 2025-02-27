@@ -29,7 +29,26 @@
             overflow-x: hidden;
         }
 
-        /* Preloader Animation */
+        /* Welcome Screen */
+        #welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--primary-dark);
+            color: var(--accent-gold);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            z-index: 9999;
+            text-align: center;
+            transition: opacity 1s ease-out;
+        }
+
+        /* Preloader */
         .preloader {
             position: fixed;
             width: 100%;
@@ -45,7 +64,7 @@
         .preloader-logo {
             width: 150px;
             opacity: 0;
-            animation: logoReveal 2s ease-out forwards;
+            animation: logoReveal 5s ease-out forwards;
         }
 
         @keyframes logoReveal {
@@ -264,6 +283,11 @@
     </style>
 </head>
 <body>
+      <!-- Welcome Screen -->
+      <div id="welcome-screen">
+        <h1>Welcome to V Home Automation</h1>
+    </div>
+
     <!-- Preloader -->
     <div class="preloader">
         <svg class="preloader-logo" viewBox="0 0 100 100">
@@ -271,13 +295,14 @@
         </svg>
     </div>
 
+
     <!-- Navigation -->
     <nav class="main-nav" id="mainNav">
         <div class="main-logo">V Home Automation</div>
         <div class="nav-menu">
             <a href="#solutions" class="nav-link">Solutions</a>
             <a href="#products" class="nav-link">Products</a>
-            <a href="#service" class="nav-link">Service</a>
+            <a href="#showrooms" class="nav-link">Showrooms</a>
             <a href="#about" class="nav-link">About</a>
             <a href="#contact" class="nav-link">Contact</a>
         </div>
@@ -311,34 +336,7 @@
                 <p>Adaptive lighting systems with mood-based automation</p>
             </div>
         </div>
-         <!-- Repeat this card for each system -->
-         <div class="system-card">
-            <div class="system-icon">
-                <i class="fas fa-lightbulb"></i>
-            </div>
-            <h3>Intelligent Lighting</h3>
-            <p>Adaptive lighting systems with mood-based automation</p>
-        </div>
-    </div>
-     <!-- Repeat this card for each system -->
-     <div class="system-card">
-        <div class="system-icon">
-            <i class="fas fa-lightbulb"></i>
-        </div>
-        <h3>Intelligent Lighting</h3>
-        <p>Adaptive lighting systems with mood-based automation</p>
-    </div>
-</div>
- <!-- Repeat this card for each system -->
- <div class="system-card">
-    <div class="system-icon">
-        <i class="fas fa-lightbulb"></i>
-    </div>
-    <h3>Intelligent Lighting</h3>
-    <p>Adaptive lighting systems with mood-based automation</p>
-</div>
-</div>
-    </section>
+    </section> 
 
     <!-- Interactive Demo Section -->
     <section class="demo-section" style="background-image: url('smart-home-demo.jpg')">
@@ -350,6 +348,17 @@
     </section>
 
     <script>
+        
+         // Welcome Screen Transition
+         document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                document.getElementById("welcome-screen").style.opacity = "0";
+                setTimeout(function () {
+                    document.getElementById("welcome-screen").style.display = "none";
+                }, 1000);
+            }, 1000);
+        });
+
         // Preloader
         window.addEventListener('load', () => {
             const preloader = document.querySelector('.preloader');
@@ -358,6 +367,7 @@
                 preloader.style.display = 'none';
             }, 500);
         });
+
 
         // Nav Scroll Effect
         window.addEventListener('scroll', () => {
